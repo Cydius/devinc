@@ -2,8 +2,7 @@
 #include <stdio.h>
 
 int getStrSize(char *ptr) {
-	int size;
-	size = 0;
+	int size = 0;
 	while(*ptr != '\0') {
 		ptr++;
 		size++;
@@ -16,18 +15,21 @@ char *reverse(char *stext) {
 	int textSize = getStrSize(stext);
 	int i;
 	char reverse[textSize];
-	
+	char *ptrReturn;
+
 	// goto last char
 	while(*stext != '\0') {
 		stext++;
 	}
 	stext--;
-
+	
+	// fill array with chars from pointer
 	for(i=0;i<textSize;i++) {
 		reverse[i] = *stext;
 		stext--;
 	}
-	return &reverse[0];
+	ptrReturn = reverse;
+	return ptrReturn;
 }
 
 int main(int argc, char *argv[]) {
