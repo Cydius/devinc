@@ -16,9 +16,19 @@ void bubblesort(int *numbers) {
 }
 
 int main() {
+	int i;
 	int numbers[100];
 	
+	for(i=0;i<sizeof(numbers);i++) {
+		numbers[i] = rand() % 500;
+	}
+	
 	bubblesort(numbers);
+
+	for(i=0;i<sizeof(numbers);i++) {
+		printf("%c",numbers[i]);
+	}
+	printf("\n");
 	
 	exit(0);
 }
